@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="gallery-container">
+        <h1>Our Memories</h1>
+        <div class="photo-grid">
+            <div class="photo-frame" style="background-image: url('img1.jpg');" onclick="openModal(0, 'img')"></div>
+            <div class="photo-frame" style="background-image: url('img2.jpg');" onclick="openModal(1, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('thumbnail1.jpg');" onclick="openModal(6, 'video')"></div> <!-- Thumbnail for video -->
+            <div class="photo-frame" style="background-image: url('img3.jpg');" onclick="openModal(2, 'img')"></div>
+            <div class="photo-frame" style="background-image: url('img4.jpg');" onclick="openModal(3, 'img')"></div>
+            <div class="photo-frame" style="background-image: url('img5.jpg');" onclick="openModal(4, 'img')"></div>
+            <div class="photo-frame" style="background-image: url('img6.jpg');" onclick="openModal(5, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('thumbnail2.png');" onclick="openModal(7, 'video')"></div> <!-- Thumbnail for video -->
+            <div class="photo-frame" style="background-image: url('img7.jpg');" onclick="openModal(8, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img8.jpg');" onclick="openModal(9, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img9.jpg');" onclick="openModal(10, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img10.jpg');" onclick="openModal(11, 'img')"></div>
+            <div class="photo-frame" style="background-image: url('img11.jpg');" onclick="openModal(12, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img12.jpg');" onclick="openModal(13, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img13.jpg');" onclick="openModal(14, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img14.jpg');" onclick="openModal(15, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img15.jpg');" onclick="openModal(16, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img16.jpg');" onclick="openModal(17, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img17.jpg');" onclick="openModal(18, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img18.jpg');" onclick="openModal(19, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img19.jpg');" onclick="openModal(20, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img20.jpg');" onclick="openModal(21, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('img21.jpg');" onclick="openModal(22, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('thumbnail3.jpg');" onclick="openModal(23, 'video')"></div> <!-- Thumbnail for video -->
+			<div class="photo-frame" style="background-image: url('img22.jpg');" onclick="openModal(24, 'img')"></div>
+			<div class="photo-frame" style="background-image: url('thumbnail4.jpg');" onclick="openModal(25, 'video')"></div> <!-- Thumbnail for video -->
+			<div class="photo-frame" style="background-image: url('thumbnail5.png');" onclick="openModal(26, 'video')"></div> <!-- Thumbnail for video -->
+			<div class="photo-frame" style="background-image: url('thumbnail7.jpg');" onclick="openModal(27, 'video')"></div> <!-- Thumbnail for video -->
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Zoomed Image" style="display: none;">
+            <video id="modalVideo" controls style="display: none;">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="nav-button prev" onclick="changeMedia(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="changeMedia(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

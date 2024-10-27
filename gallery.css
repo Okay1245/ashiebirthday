@@ -1,0 +1,125 @@
+body {
+    background-color: #ffe6f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.2) 10px,
+        rgba(255, 255, 255, 0.2) 20px
+    );
+    animation: moveBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+.gallery-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.photo-frame {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s; /* Smooth zoom */
+}
+
+.photo-frame:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto; /* Center the modal content */
+    text-align: center;
+    top: 50%; /* Position from the top */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 20; /* Ensure close button is above other elements */
+}
+
+.nav-button {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    z-index: 15; /* Ensure navigation buttons are above other elements */
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+#modal img, 
+#modal video {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain; /* Ensure the image or video fits well */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin: auto; /* Center the media horizontally */
+    display: block; /* Ensures margin auto works */
+}
